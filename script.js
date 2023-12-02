@@ -26,6 +26,27 @@ function savePreferences() {
     // applies selected preferences
     applyPreferences();
     // alerts user that preferences are saved
-    alert('Preferences saved!');
+    alert('Preferences are saved!');
+}
+
+// function that applies the preferences that were selected by the user
+function applyPreferences() {
+    // converts the JSOn string back to an object and then sets it to a variable called savedPreferences
+    const savedPreferences = JSON.parse(localStorage.getItem("userPreferences"));
+    // changes the actual styling of the elements on the webpage
+    if (true) {
+        // changes background color
+        document.body.style.backgroundColor = savedPreferences.bColor;
+        // changes the color of the text
+        document.body.style.color = savedPreferences.tColor;
+        // creates an h2 element
+        const greet = document.createElement('h2');
+        // sets the user's input for name to userName
+        const userName = savedPreferences.name;
+        // adds text to the h2 that was just created
+        greet.textContent = `Hello, ${userName}!`;
+        // inserts the newly created h2 element at the top of the page
+        document.body.insertBefore(greet, document.body.firstChild);
+    }
 }
 
