@@ -49,4 +49,12 @@ function applyPreferences() {
         document.body.insertBefore(greet, document.body.firstChild);
     }
 }
+// Event listener for form submission
+document.getElementById('preferences-form').addEventListener('submit', function(event) {
+    // Prevents default form submission
+    event.preventDefault(); 
+    savePreferences();
+  });
 
+  // applies preferences on page load 
+applyPreferences();
